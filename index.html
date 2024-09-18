@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.5.0/css/all.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="emotions.css"/>
+    <title>Glow</title>
+</head>
+<body>
+    
+    <div id="primary-content" class="centered-pen">
+        <h1 class="display-3">
+            <span>M</span>eet The <span></span>Epic <span>M</span>ountain <span>Be🐻r</span> !
+        </h1>
+        <p class="lead">
+            Unleash the wild energy of your new assistant, ready to tackle every challenge with you. The adventure starts now!
+        </p>
+    
+
+        <div class="personal-assistant" id="personal-assistant">
+            <div class="glowing-box">
+                <div class="eyes">
+                    <!-- Left eye -->
+                    <div class="eye left-eye">
+                        <div class="pupil"></div>
+                        <div class="eyelid"></div>
+                    </div>
+                    <!-- Right eye -->
+                    <div class="eye right-eye">
+                        <div class="pupil"></div>
+                        <div class="eyelid"></div>
+                    </div>
+                    <!-- Angry eyes -->
+                <div class="angry-eyes" style="display: none;">
+                    <div class="angry-eye left-eye">></div>
+                    <div class="angry-eye right-eye">&lt;</div>
+                </div>
+                <!-- Sad Eyes -->
+                <div class="sad-eyes" style="display: none;">
+                    <div class="sad-eye left-eye"></div>
+                    <div class="sad-eye right-eye"></div>
+                </div>
+                <!-- Confused Eyes -->
+                <div class="confused-eyes" style="display: none;">
+                    <div class="confused-eye left-eye">?</div>
+                    <div class="confused-eye right-eye">?</div>
+                </div>
+                <!-- Lovely Eyes (Heart-Shaped) -->
+                <div class="lovely-eyes" style="display: none;">
+                    <div class="lovely-eye left-eye">❤️</div>
+                    <div class="lovely-eye right-eye">❤️</div>
+                    <!-- Floating Hearts -->
+                    <div class="floating-heart heart1"></div>
+                    <div class="floating-heart heart2"></div>
+                    <div class="floating-heart heart3"></div>
+                    <div class="floating-heart heart4"></div>
+                    <div class="floating-heart heart5"></div>
+                </div>
+                    <!-- Eyebrows -->
+                    <div class="eyebrows">
+                        <div class="eyebrow left-eyebrow"></div>
+                        <div class="eyebrow right-eyebrow"></div>
+                    </div>
+                    
+                </div>
+                <div class="mouth"></div>
+                <!-- Angry Mouth -->
+                <div class="angry-mouth" style="display: none;"></div>
+                <!-- Happy Mouth -->
+                <div class="happy-mouth"></div>
+                <!-- Sad Mouth -->
+                <div class="sad-mouth"></div>
+                <!-- Confused Mouth -->
+                <div class="confused-mouth" style="display: none;"></div>
+                <!-- Lovely Mouth (Shame) -->
+                <div class="lovely-mouth" style="display: none;">///</div>
+            </div>
+            <div class="layer"></div>
+        </div>   
+
+        <!-- Chat Box -->
+        <div id="chat-container">
+            <div id="chat-header">
+                <div class="back-emoji" id="back-emoji">
+                    <span>⬅</span> <!-- Back emoji -->
+                </div>
+                <div class="profile-pic">
+                    <img src="user.png" alt="Profile Picture">
+                </div>
+                <div class="chat-info">
+                    <div class="name">Mountain Be🐻r</div>
+                    <div class="status">online</div>
+                </div>
+                <div class="chat-icons">
+                    <i class="fas fa-video"></i>
+                    <i class="fas fa-phone"></i>
+                    <i class="fas fa-ellipsis-v" id="ellipsis-btn"></i>
+                    <div id="delete-popup" class="delete-popup">
+                        <span>🗑️ Delete chat</span>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="chat-box">
+                <div id="chat-log"></div>
+                <div id="chat-input-container">
+                    <textarea id="chat-input" placeholder="Type a message..."></textarea>
+                    <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Popup Message -->
+    <div id="popup-message" class="popup-message">
+        <p>To talk with me, Click On me</p>
+        <div class="arrow arrow1"></div>
+        <div class="arrow arrow2"></div>
+        <div class="arrow arrow3"></div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

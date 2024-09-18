@@ -1,0 +1,346 @@
+/* Angry eyes container */
+.angry-eyes {
+    position: absolute; /* Same positioning context as default eyes */
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center; /* Center the eyes within the container */
+    align-items: center;
+    top: 37px; /* Move the angry eyes slightly downward */
+    gap: 0px; /* Ensure no gap between eyes */
+}
+
+/* Angry eye symbols */
+.angry-eye {
+    font-size: 45px; /* Larger size for a bolder appearance */
+    color: #000000; /* Symbol color */
+    text-align: center; /* Center the symbol */
+    vertical-align: middle; /* Align vertically */
+    line-height: 1; /* Ensure the height is tight to the symbol */
+    text-shadow: 0 0 30px rgb(77, 2, 2); /* Glowing effect */
+}
+
+/* Left eye angry symbol ">" */
+.angry-eye.left-eye {
+    transform: rotate(3deg); /* Rotation for intensity */
+    position: relative;
+    left: -44px; /* Adjust to fine-tune spacing */
+}
+
+/* Right eye angry symbol "<" */
+.angry-eye.right-eye {
+    transform: rotate(-3deg); /* Rotation for intensity */
+    position: relative;
+    left: -5px; /* Adjust to fine-tune spacing */
+    top: -45px;
+}
+
+/* Angry mouth */
+.angry-mouth {
+    width: 58px; /* Width of the mouth */
+    height: 15px; /* Height of the line */
+    background-color: #ffffff; /* Mouth color */
+    position: absolute;
+    top: 60px; /* Move the mouth slightly downward */
+    left: 50%; /* Center the mouth horizontally */
+    transform: translateX(-50%); /* Ensure it's centered */
+    border-radius: 10px; /* Round the corners */
+    box-shadow: 0 0 20px rgba(255, 2, 99, 0.973); /* Glowing effect */
+    border: 2px solid #000000; /* Add black border */
+}
+
+
+/* Angry glowing box */
+.glowing-box.angry {
+    background-color: #ff0000; /* Change background to red */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.9), 0 0 10px rgba(255, 0, 0, 0.7) inset; /* Stronger red glow */
+    border: 2px solid rgb(250, 250, 250);
+    width: 100px; /* Shrink width */
+    height: 80px; /* Shrink height */
+    transition: all 0.2s ease-in-out; /* Smooth transition for size and color changes */
+}
+
+
+/* Angry state reset */
+.glowing-box.angry-reset {
+    width: 115px; /* Original width */
+    height: 95px; /* Original height */
+    background-color: transparent; /* Reset background color */
+    box-shadow: 0 0 5px rgb(255, 94, 0), 0 0 15px rgba(255, 94, 0, 0.5) inset; /* Reset glow */
+    transition: all 0.2s ease-in-out; /* Smooth transition for size and color changes */
+}
+
+/* Happy mouth */
+.happy-mouth {
+    position: absolute;
+    bottom: 10%;
+    width: 60%;
+    height: 23%;
+    border-radius: 0 0 50% 50%;
+    border: 5px solid rgb(3, 3, 3);
+    border-top: none;
+    background-color: transparent; /* Ensure the background is transparent */
+    display: none; /* Initially hidden */
+    transition: all 0.3s ease; /* Smooth transition */
+    left: 20%; /* Adjust this value to move the mouth to the right */
+}
+
+/* Happy glowing box */
+.glowing-box.happy {
+    background-color: #fffb00; /* Change background to green */
+    box-shadow: 0 0 15px rgba(251, 255, 0, 0.795), 0 0 10px rgb(255, 166, 0) inset; /* Green glow */
+    border: 2px solid rgb(250, 250, 250);
+    width: 115px; /* Original width */
+    height: 95px; /* Original height */
+    transition: all 0.3s ease-in-out; /* Smooth transition for size and color changes */
+    animation: rotate 5s linear infinite; /* Add rotation animation */
+}
+
+/* Sad mouth */
+.sad-mouth {
+    position: absolute;
+    bottom: 20%; /* Adjusted for placement */
+    width: 60%;
+    height: 15%; /* Reduced height */
+    border-radius: 50% 50% 0 0; /* Curved frown shape */
+    border: 5px solid rgb(255, 255, 255); /* Light color for the sad mouth */
+    border-bottom: none; /* No border at the bottom */
+    background-color: transparent; /* Ensure the background is transparent */
+    display: none; /* Initially hidden */
+    transition: all 0.3s ease; /* Smooth transition */
+    left: 20.5%; /* Adjust this value to move the mouth to the right */
+}
+
+
+/* Sad glowing box */
+.glowing-box.sad {
+    background-color: #0014cc; /* Change background to a sad color */
+    box-shadow: 0 0 15px rgba(0, 51, 204, 0.733), 0 0 10px rgba(155, 98, 247, 0.904) inset; /* Blue glow */
+    border: 2px solid rgb(250, 250, 250);
+    width: 115px; /* Original width */
+    height: 95px; /* Original height */
+    transition: all 0.3s ease-in-out; /* Smooth transition for size and color changes */
+}
+
+/* Sad eyes */
+.sad-eyes {
+    position: absolute;
+    bottom: 15%;
+    width: 80%;
+    height: auto;
+    display: flex;
+    justify-content: center; /* Center the eyes within the container */
+    top: 45px; /* Move the sad eyes slightly downward */
+    gap: 20px; /* Adjust gap as needed */
+    left: 14.5%;
+}
+
+.sad-eye {
+    width: 35px; /* Width of the curved line */
+    height: 15px; /* Height of the curved line */
+    border-left: 2px solid rgb(255, 255, 255); /* Left border visible */
+    border-right: 2px solid rgb(255, 255, 255); /* Right border visible */
+    border-top: none; /* Hide the top border */
+    border-bottom: 4px solid rgb(255, 255, 255); /* Bottom border visible */
+    border-radius: 0 0 50% 50%; /* Curved line shape */
+    background-color: transparent; /* Ensure the background is transparent */
+}
+
+.sad-eye.right-eye {
+    margin-right: 10px; /* Adjust this value to move the right eye further right */
+}
+
+.sad-eye.left-eye {
+    margin-left: 1px; /* Adjust this value to move the right eye further right */
+}
+
+/* Eyes and Confused Eyes */
+.confused-eyes {
+    display: none;
+    position: absolute;
+    top: 50%; /* Fixed to avoid movement */
+    width: 100%;
+    justify-content: space-evenly; /* Adds space between eyes */
+    align-items: center;
+    left: 1%;
+}
+
+/* Confused Eye styling */
+.confused-eye {
+    width: 32px;
+    height: 35px;
+    background-color: #00ffb3;
+    border: 2px solid white; /* Add a white border */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: black;
+    margin: 0;
+}
+
+/* Adjust the position of left and right eyes */
+.confused-eye.left-eye {
+    margin-right: 10px; /* Adds space between left and right eye */
+}
+
+.confused-eye.right-eye {
+    margin-left: 1px; /* Adds space between left and right eye */
+}
+
+
+.confused-mouth {
+    /* Style for open-mouth appearance */
+    width: 25px;
+    height: 35px; /* Increase height to give the open-mouth effect */
+    border: 3px solid #ffffff; /* Border color for the mouth */
+    border-radius: 50%/100%; /* Creates an elongated oval shape */
+    background: black; /* No background color */
+
+    /* Positioning */
+    position: absolute;
+    top: 48px; /* Adjust to move the mouth further up */
+    right: 41.5px; /* Adjust to move the mouth further right */
+}
+
+/* Confused glowing box */
+.glowing-box.confused {
+    background-color: #0000008c; /* Change background to a sad color */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.658), 0 0 5px rgba(245, 248, 201, 0.904) inset; /* Blue glow */
+    border: 2px solid rgb(250, 250, 250);
+    width: 115px; /* Original width */
+    height: 95px; /* Original height */
+    transition: all 0.3s ease-in-out; /* Smooth transition for size and color changes */
+}
+
+/* Lovely Eyes */
+.lovely-eyes {
+    display: flex; /* Use flexbox for horizontal alignment */
+    position: absolute;
+    width: 100%;
+    justify-content: center; /* Center the eyes horizontally */
+    align-items: center; /* Ensure eyes are vertically aligned */
+    left: 0; /* Start from the left edge */
+}
+
+/* Lovely Eye Styling */
+.lovely-eye {
+    width: 30px;
+    height: 30px;
+    background: transparent; 
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    margin: 0 15px; /* Add space between left and right eye */
+    border: 2px solid rgb(255, 255, 255); /* Add a black border */
+    border-radius: 80%; /* Ensure the border is circular */
+}
+
+
+/* Adjust right eye position */
+.lovely-eye.right-eye {
+    margin-left: 63px; /* Space between eyes */
+    transform: translateY(-4px); /* Move right eye up */
+}
+
+/* Remove unnecessary margin and top properties */
+.lovely-eye.left-eye {
+    margin-right: 17px; /* Equal spacing between eyes */
+    transform: translateY(28px); /* Move right eye up */
+}
+
+
+/* Lovely Mouth (Shame) */
+.lovely-mouth {
+    width: 40px;
+    height: 20px;
+    background: none;
+    position: absolute;
+    top: 20px; /* Adjust to align with face */
+    right: 36px;
+    font-size: 35px;
+    color: #dd0344; /* Brown shade for shame */
+}
+
+/* lovely glowing box */
+.glowing-box.lovely {
+    background-color: #f5bbe3b0; /* Change background to a sad color */
+    box-shadow: 0 0 15px rgba(247, 123, 230, 0.89), 0 0 10px rgba(255, 0, 170, 0.904) inset; /* Blue glow */
+    border: 2px solid rgb(255, 0, 0);
+    width: 115px; /* Original width */
+    height: 95px; /* Original height */
+    transition: all 0.3s ease-in-out; /* Smooth transition for size and color changes */
+}
+
+/* Floating Hearts Animation */
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-150px) scale(0.6);
+        opacity: 0;
+    }
+}
+
+.floating-heart {
+    position: absolute;
+    display: none;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(255, 0, 0, 0.5);
+    border: 1px solid rgb(245, 169, 216);
+    animation: floatHearts 3s infinite ease-in-out;
+    
+    /* Move hearts downward */
+    bottom: -60px; /* Adjust this value to move the hearts further down */
+}
+
+
+.floating-heart::before,
+.floating-heart::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.floating-heart::before {
+    top: -5px;
+    left: 0px;
+}
+
+.floating-heart::after {
+    left: 5px;
+    top: 0;
+}
+
+/* Position different hearts */
+.heart1 {
+    left: 30%;
+    animation-delay: 0.2s;
+}
+.heart2 {
+    left: 60%;
+    animation-delay: 0.4s;
+}
+.heart3 {
+    left: 40%;
+    animation-delay: 0.6s;
+}
+.heart4 {
+    left: 70%;
+    animation-delay: 0.8s;
+}
+.heart5 {
+    left: 50%;
+    animation-delay: 1s;
+}

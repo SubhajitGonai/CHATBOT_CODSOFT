@@ -1,0 +1,764 @@
+/* General Styling */
+html, body {
+    background: rgb(204, 184, 146);
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    font-size: 12px; /* Smaller base font size */
+    line-height: 2.8; /* Adjusted for readability */
+}
+
+* { 
+    user-select: none; 
+}
+
+#primary-content {
+    position: relative;
+    text-align: center;
+    padding: 48px; /* Adds padding for better text spacing */
+}
+
+/* Heading Styling */
+h1 {
+    position: absolute;
+    top: 3%; /* Position of the heading */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4rem; /* Reduced outer text size */
+    text-align: center;
+    margin: 0;
+    z-index: 10;
+    white-space: nowrap; /* Ensures text stays on a single line */
+}
+
+/* Inner Span (Highlighted Text) */
+h1 span {
+    color: rgb(0, 0, 0);
+    font-size: 5rem; /* Increased inner span text size */
+    font-weight: bolder;
+    line-height: 1.2; /* Adjusts space between characters for better alignment */
+    animation: fade-in 2s ease-out;
+    text-shadow: 
+        2px 1px 0 rgba(255, 94, 0, 0.8),  /* Right bottom */
+        -1px -1px 0 rgba(1, 255, 115, 0.8), /* Left top */
+        1px -1px 0 rgba(248, 52, 52, 0.801),  /* Right top */
+        -2px 1px 0 rgba(252, 252, 252, 0.8);  /* Left bottom */
+}
+
+/* Paragraph Styling */
+p.lead {
+    position: absolute;
+    top: calc(3% + 6.5rem); /* Increased the top value to add more space */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem; /* Reduced font size */
+    text-align: center;
+    margin: 0;
+    max-width: 90%; /* Slightly wider for better fit */
+    line-height: 1.6; /* Adjusted for readability */
+}
+
+
+/* Text animation */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+.personal-assistant {
+	position: relative;
+	margin-top: 200px; /* Adjust this value to move it upward */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+}
+
+
+.glowing-box  {
+	position: absolute;
+	bottom: 50px;
+	width: 115px;
+	height: 95px;
+	border-radius: 45%;
+	border: 3px solid #00fff2;
+	box-shadow: 0 0 10px #0066ff;
+	animation: breathe-and-jump 3s linear infinite;
+	cursor: pointer;
+	z-index: 1;
+	transition: all 0.3s ease;
+}
+
+.glowing-box::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: calc(100% + 3px);
+    height: calc(100% + 2px);
+    background: linear-gradient(to bottom, #5fc, #1a8); /* Existing gradient */
+    border-radius: 45%;
+    opacity: 0;
+    transition: 0.3s all;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); /* Cyan shadow effect */
+}
+
+
+/* Eyebrows */
+.eyebrows {
+    position: absolute; /* Absolute positioning to place above eyes */
+    width: 180px; /* Adjust as needed to accommodate the gap */
+    margin: 0 auto;
+    margin-left: -28px; /* Shift the entire container to the left */
+    display: flex;
+    gap: 15px; /* Adjust the gap between eyebrows as needed */
+    top: -5px; /* Move eyebrows up above the eyes */
+}
+
+/* Eyebrow styling */
+.eyebrow {
+    width: 50px; /* Width of the eyebrow */
+    height: 35px; /* Height to create a pronounced curve */
+    background-color: transparent; /* Transparent background */
+    border-radius: 100px 100px 0 0; /* Full curve for the top half */
+    position: relative;
+    top: 0; /* Adjust to position the eyebrow */
+    box-shadow: 0 -6px 8px rgba(0, 225, 255, 0.842); /* Eyebrow color with shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for color change */
+}
+
+
+/* Left eyebrow rotation */
+.left-eyebrow {
+    transform: rotate(-20deg); /* Rotate to angle the left eyebrow */
+}
+
+/* Right eyebrow rotation */
+.right-eyebrow {
+    transform: rotate(20deg); /* Rotate to angle the right eyebrow */
+}
+
+/* Angry state */
+.angry-eyebrows .eyebrow {
+    box-shadow: 0 -6px 8px rgba(255, 0, 0, 0.842); /* Red shadow for angry */
+    width: 40px;  /* Reduce width */
+    height: 25px; /* Reduce height */
+    transition: all 0.3s ease; /* Smooth transition for size and shadow change */
+    margin-left: 2px; /* Move eyebrows to the right */
+}
+
+
+/* Happy state */
+.happy-eyebrows .eyebrow {
+    box-shadow: 0 -6px 8px rgba(255, 255, 0, 0.842); /* Yellow shadow for happy */
+}
+
+/* Sad state */
+.sad-eyebrows .eyebrow {
+    box-shadow: 0 -6px 8px rgba(0, 0, 255, 0.842); /* Blue shadow for sad */
+}
+
+/* Confused state */
+.confused-eyebrows .eyebrow {
+    box-shadow: 0 -6px 8px rgba(243, 239, 186, 0.842); /* Purple shadow for confused */
+}
+
+/* Lovely state */
+.lovely-eyebrows .eyebrow {
+    box-shadow: 0 -6px 8px rgba(255, 20, 147, 0.842); /* Pink shadow for lovely */
+}
+
+/* Styling for the eyes */
+.glowing-box .eyes {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 25px;
+    transform: translateY(-20px);
+}
+
+/* Individual eye styling */
+.glowing-box .eye {
+    width: 40px;
+    height: 35px;
+    background-color: #00ffb3;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+    border: 2px solid white; /* Add a white border */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.1s ease-in-out; /* Smooth transition */
+    margin: 0 5px; /* Add a small gap between the eyes */
+}
+
+/* Left eye */
+.left-eye {
+    position: relative;
+    top: 10%;
+}
+
+/* Right eye */
+.right-eye {
+    position: relative;
+    top: 10%;
+}
+
+
+/* Pupil styling */
+.pupil {
+    width: 12px;
+    height: 12px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -60%);
+    transition: all 0.1s ease-out;
+}
+
+/* Eyelid */
+.eyelid {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(185, 185, 185); /* Eyelid color */
+    position: absolute;
+    top: -100%; /* Start hidden above */
+    animation: blink 1.5s ease-in-out infinite; /* Duration of blink cycle */
+}
+
+/* Eyelid animation to simulate a single blink */
+@keyframes blink {
+    0%, 100% {
+        top: -100%; /* Start and end hidden above the eye */
+    }
+    25% {
+        top: 0%; /* Move down to cover the eye */
+    }
+    50% {
+        top: -100%; /* Move back up, hidden above */
+    }
+}
+
+
+/* Layer */
+.layer {
+    transform: rotateX(70deg);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Make the layer circular */
+    border: 1px solid white; /* Add a white border */
+    box-shadow: 0 0 100px #0066ff,
+                0 0 15px #00fff2 inset;
+    animation: jump-pulse 3s linear infinite;
+}
+
+
+
+.layer > li::before {
+    border-radius: 50%;
+    transition: 0.2s linear all;
+}
+
+
+/* Hover states */
+.glowing-box:not(.active):hover {
+    animation: shake-to-alert 0.5s linear;
+    height: 105px;
+    transform: translateY(-4px);
+    border-color: rgb(0, 255, 106);
+    box-shadow: 0 0 5px rgb(0, 255, 200);
+
+    /* Hover effect for eyebrows */
+    .eyebrows .eyebrow {
+        box-shadow: 0 -6px 8px  rgb(0, 255, 106); /* New color on hover */
+    }
+}
+
+.glowing-box:not(.active):hover + .layer {
+    box-shadow: 0 0 100px rgb(0, 255, 106), 0 0 15px rgb(0, 255, 200) inset;
+    animation: shake-pulse 0.5s linear;
+}
+
+
+/* Animations */
+@keyframes fade-in {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes breathe-and-jump {
+	0%, 40%, 80%, 100% { height: 95px; transform: translateY(0); }
+	20%, 60%, 70%, 90% { height: 100px; transform: translateY(-5px); }
+	85% { height: 85px; transform: translateY(-20px); }
+}
+
+@keyframes bounce-then-breathe {
+	0%, 5%, 10%, 15% { transform: translateY(0); }
+	2.5%, 7.5%, 12.5% { transform: translateY(-15px); }
+	20%, 40%, 60%, 80%, 100% {
+		height: 95px;
+		transform: translateY(0);
+	}
+	30%, 50%, 70%, 90% {
+		height: 100px;
+		transform: translateY(-5px);
+	}
+}
+
+@keyframes jump-pulse {
+	0%, 40%, 80%, 100% {
+		box-shadow: 0 0 30px #0066ff, 0 0 45px #00fff2 inset;
+	}
+	20%, 60%, 70%, 90% {
+		box-shadow: 0 0 70px #0066ff, 0 0 25px #00fff2 inset;
+	}
+	85% {
+		box-shadow: 0 0 100px #0066ff, 0 0 15px #00fff2 inset;
+	}
+}
+
+@keyframes bounce-pulse {
+	0%, 5%, 10%, 15% { box-shadow: 0 0 30px #5fc, 0 0 45px #5fc inset; }
+	2.5%, 7.5%, 12.5% { box-shadow: 0 0 100px #5fc, 0 0 15px #5fc inset; }
+	20%, 40%, 60%, 80%, 100% { box-shadow: 0 0 30px #5fc, 0 0 45px #5fc inset; }
+	30%, 50%, 70%, 90% { box-shadow: 0 0 70px #5fc, 0 0 25px #5fc inset; }
+}
+
+@keyframes shake-to-alert {
+	0%, 20%, 40%, 60%, 80%, 100% { transform: rotate(0) translateY(-5px); }
+	10%, 25%, 35%, 50%, 65% { transform: rotate(5deg) translateY(-5px); }
+	15%, 30%, 45%, 55%, 70% { transform: rotate(-5deg) translateY(-5px); }
+}
+
+/* Chat Container */
+#chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 530px; /* Adjust as needed */
+    width: 300px;
+    height: 240px; /* Fixed height for the entire chat container */
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    box-shadow: 0 0 0 2px #fff, /* Outer white outline */
+                0 0 0 4px #f1c40f, /* Popup border (adjusted to 4px to account for inner line) */
+                inset 0 0 0 1px #000, /* Inner black line */
+                0 -10px 15px rgba(255, 255, 255, 0.1),
+                inset 0 -10px 15px rgba(255, 255, 255, 0.1),
+                0 15px 20px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    border: 1px solid #03ff96;
+    transform: scale(0); /* Start hidden */
+    opacity: 0; /* Fully transparent initially */
+    transition: transform 1s ease, opacity 1s ease; /* Add transition */
+}
+
+
+
+/* Chat Header */
+#chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 18px; /* Adjusted padding */
+    background-color: #075e54;
+    color: rgb(250, 247, 247);
+    border-radius: 15px 15px 0 0;
+    line-height: 1;
+}
+
+/* Back Emoji */
+.back-emoji {
+    font-size: 19px; /* Adjust size of emoji */
+    margin-right: 8px; /* Move emoji further margin */
+    display: flex;
+    align-items: center; /* Center vertically with profile picture */
+}
+
+
+/* Profile Picture */
+.profile-pic {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    overflow: hidden;
+    
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Chat Info */
+.chat-info {
+    flex-grow: 1;
+    margin-left: 2px; /* Space between profile picture and chat info */
+}
+
+/* Name */
+.name {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+    margin-bottom: 2px; /* Small gap between name and status */
+}
+
+/* Status */
+.status {
+    font-size: 12px;
+    margin: 0;
+    margin-left: -78px; /* Moves the status 5px to the left */
+}
+
+
+/* Chat Icons */
+.chat-icons i {
+    font-size: 16.5px;
+    margin-left: 9px; /* Space between icons */
+    cursor: pointer;
+}
+
+
+/* Chat Box */
+#chat-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 5px;
+    background-color: #ffffff;
+    overflow: hidden;
+    animation: shadowPulse 3s infinite; /* Apply shadow animation */
+    box-shadow: 0 4px 15px rgba(0, 247, 255, 0.4); /* Initial shadow */
+}
+
+/* Shadow Pulse Animation */
+@keyframes shadowPulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Initial shadow */
+    }
+    50% {
+        box-shadow: 0 4px 25px rgba(0, 183, 255, 0.8); /* Red-tinted shadow, larger spread */
+    }
+    100% {
+        box-shadow: 0 4px 15px rgb(0, 0, 0); /* Back to initial shadow */
+    }
+}
+
+/* Chat Log */
+#chat-log {
+    flex-grow: 1;
+    overflow-y: auto; /* Allows scrolling for chat log */
+    padding: 10px;
+    background-color: #e5ddd5;
+    border-radius: 15px 15px 0 0;
+    height: calc(100% - 60px); /* Adjusted to fit header and input container */
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* General styling for chat messages */
+.message {
+    margin-bottom: 5px; /* Reduced margin between messages for a tighter look */
+    padding: 4px 10px; /* Slightly reduced padding for more compact messages */
+    border-radius: 15px; /* More rounded corners for a smoother look */
+    max-width: 90%; /* Adjusted width for better fitting */
+    text-align: left; /* Keeps text aligned to the left */
+    word-wrap: break-word;
+    display: inline-block; /* Ensures each message adjusts based on content width */
+    color: black;
+    background-color: #ffffff; /* Background color for user message */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Lighter shadow for a subtle lift */
+}
+
+/* User Message */
+.user-message {
+    background-color: #dcf8c6; /* User message background */
+    align-self: flex-end; /* Aligns user messages to the right */
+    border-radius: 15px 15px 0 15px; /* Rounded corners with a flat top-left */
+    padding: 6px 12px; /* Slightly reduced padding */
+    max-width: 90%; /* Reduced width for user message */
+    display: inline-block; /* Adjust width based on content */
+    word-wrap: break-word; /* Ensures long words break to fit inside */
+}
+
+/* Bot Message */
+.bot-message {
+    background-color: #e0f7fa; /* Bot message background */
+    padding: 6px 12px; /* Consistent padding */
+    border-radius: 15px 15px 15px 0; /* Rounded corners with a flat top-right */
+    text-align: left; /* Text is aligned to the left */
+    align-self: flex-start; /* Align bot messages to the left */
+    max-width: 90%; /* Adjusted max-width to match user message */
+    display: inline-block; /* Adjust width based on content */
+    word-wrap: break-word; /* Ensures long words break to fit inside */
+}
+
+/* Chat Input Container */
+#chat-input-container {
+    display: flex;
+    padding: 4px; /* Reduced padding */
+    background-color: #f0f0f0;
+    border-top: 1px solid #e0e0e0;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Chat Input (Textarea) */
+#chat-input {
+    width: 90%; /* Width adjustment */
+    padding: 6px 8px; /* Padding adjustment */
+    border: none;
+    border-radius: 15px;
+    background-color: #ffffff;
+    font-size: 14px; /* Increased font size */
+    color: #333333; /* Darker text color for better readability */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Shadow adjustment */
+    margin-right: 6px; /* Margin adjustment */
+    resize: none; /* Prevent manual resizing */
+    overflow: hidden; /* Hide overflow */
+    white-space: pre-wrap; /* Preserve whitespace and handle line breaks */
+    line-height: 1.4; /* Adjust line-height for better readability */
+    display: flex; /* Ensure proper alignment */
+    align-items: center; /* Center text vertically */
+    min-height: 34px; /* Minimum height for the textarea */
+}
+
+/* Ensure textarea expands automatically */
+#chat-input:focus {
+    outline: none;
+    box-shadow: 0 1px 2px rgba(0, 123, 255, 0.5); /* Focus shadow adjustment */
+}
+
+
+/* Send Button */
+#send-btn {
+    padding: 9px; /* Reduced padding */
+    background-color: #25d366;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px; /* Reduced font size */
+    cursor: pointer;
+    width: 36px; /* Reduced width */
+    height: 38px; /* Reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2); /* Slightly reduced box-shadow */
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 5px; /* Reduced margin */
+}
+
+#send-btn:hover {
+    background-color: #20b258;
+    transform: translateY(-2px);
+}
+
+#send-btn:active {
+    transform: translateY(0);
+}
+
+/* Scrollbar Styles */
+#chat-log::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chat-log::-webkit-scrollbar-thumb {
+    background-color: #25d366;
+    border-radius: 10px;
+}
+
+.delete-popup {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 5px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    cursor: pointer;
+    color: #333333;
+}
+
+.delete-popup span {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Popup Message Style */
+.popup-message {
+    position: fixed;
+    width: 20%;
+    top: 10px; /* Adjusted position for better visibility */
+    left: 50%;
+    transform: translateX(-50%); /* Centered the popup */
+    background-color: #f1c40f;
+    color: #333;
+    padding: 10px 20px; /* Reduced padding to decrease height */
+    border-radius: 20px; /* Rounded corners for a cloud-like appearance */
+    outline: 2px solid black; /* Added outline */
+    border: 6px solid transparent; /* Initially transparent border */
+    box-shadow: 0 0 0 2px #fff, /* Outer white outline */
+                0 0 0 4px #f1c40f, /* Popup border (adjusted to 4px to account for inner line) */
+                inset 0 0 0 1px #000, /* Inner black line */
+                0 -10px 15px rgba(255, 255, 255, 0.1),
+                inset 0 -10px 15px rgba(255, 255, 255, 0.1),
+                0 15px 20px rgba(0, 0, 0, 0.3),
+                inset 0 15px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 9999; /* Ensure it's on top of other elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    position: relative; /* For positioning the arrows */
+    animation: popup-slide-in 1.5s ease-out forwards; /* Slower animation duration */
+    transition: all 0.4s ease; /* Smooth transition for hover effects */
+}
+
+/* Popup Hover Effect */
+.popup-message:hover {
+    background-color: #f39c12; /* Hover color: slightly darker */
+    border-color: #f39c12; /* Match border to background on hover */
+    outline: 2px solid rgb(255, 255, 255); /* Hover outline */
+    box-shadow: 0 0 0 2px #fff, /* Outer white outline */
+                0 0 0 4px #f39c12, /* Darker outline effect on hover */
+                inset 0 0 0 1px #000, /* Inner black line */
+                0 -10px 20px rgba(255, 255, 255, 0.15),
+                inset 0 -10px 20px rgba(255, 255, 255, 0.15),
+                0 20px 30px rgba(0, 0, 0, 0.5),
+                inset 0 20px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Common arrow styles */
+.arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    z-index: 9998; /* Ensure arrows are behind the popup */
+    animation: bounce-arrow 1.5s ease-in-out infinite, move-arrow 6s ease-in-out infinite; /* Apply both animations */
+}
+
+/* First classic triangle arrow */
+.arrow1 {
+    top: -40px; /* Positioned at the top */
+    left: 50%; /* Adjust position for the first arrow */
+    transform: translateX(-50%);
+    border-width: 12px; /* Increased size */
+    border-color: transparent transparent #f7ebba transparent; /* Arrow pointing up */
+    filter: drop-shadow(0 0 10px rgb(255, 0, 0)); /* Glowing effect */
+    animation-delay: 0s; /* Start immediately */
+}
+
+/* Second classic triangle arrow */
+.arrow2 {
+    top: -50px; /* Positioned at the top */
+    left: 50%; /* Center arrow */
+    transform: translateX(-50%);
+    border-width: 12px; /* Increased size */
+    border-color: transparent transparent #f7ebba transparent; /* Arrow pointing up */
+    filter: drop-shadow(0 0 10px rgb(0, 255, 128)); /* Glowing effect */
+    animation-delay: 1s; /* Staggered start */
+}
+
+/* Third classic triangle arrow */
+.arrow3 {
+    top: -60px; /* Positioned at the top */
+    left: 50%; /* Adjust position for the third arrow */
+    transform: translateX(-50%);
+    border-width: 12px; /* Increased size */
+    border-color: transparent transparent #f7ebba transparent; /* Arrow pointing up */
+    filter: drop-shadow(0 0 10px rgb(4, 0, 255)); /* Glowing effect */
+    animation-delay: 2s; /* Staggered start */
+}
+
+/* Bounce Animation for Arrow */
+@keyframes bounce-arrow {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0); /* Start and end at original position */
+    }
+    50% {
+        transform: translateX(-50%) translateY(-5px); /* Move up slightly at midpoint */
+    }
+}
+
+/* Arrow Movement Animation */
+@keyframes move-arrow {
+    0% {
+        top: -40px; /* Original position for the first arrow */
+    }
+    15% {
+        top: -40px; /* Arrow stays in initial position for a while */
+    }
+    30% {
+        top: -50px; /* Move up for the second arrow */
+    }
+    45% {
+        top: -50px; /* Arrow stays in position */
+    }
+    60% {
+        top: -60px; /* Move up for the third arrow */
+    }
+    75% {
+        top: -60px; /* Arrow stays in position */
+    }
+    90% {
+        top: -50px; /* Move back to original position */
+    }
+    100% {
+        top: -40px; /* Final position */
+    }
+}
+
+/* Animation for sliding in from the right */
+@keyframes popup-slide-in {
+    from {
+        transform: translateX(100%); /* Start fully off-screen to the right */
+        opacity: 0; /* Optional: Fade in */
+    }
+    to {
+        transform: translateX(-50%); /* Fully centered in the viewport */
+        opacity: 1;
+    }
+}
+
+/* Animation for hiding with a bounce effect */
+@keyframes popup-slide-out {
+    from {
+        transform: translateX(-50%);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%); /* Slide out to the right */
+        opacity: 0;
+    }
+}
+
+/* Apply slide-out animation on hide */
+.popup-message.hide {
+    animation: popup-slide-out 0.3s ease-out;
+}
